@@ -1,0 +1,4 @@
+#!/bin/bash
+user="$(whoami)"
+User="${user^}"
+echo "$1" | sed 's/'$(sed 's/[^^]/[&]/g; s/\^/\\^/g' <<<$HOME)'/C:\\Users\\'"$User"'/' | sed 's/\//\\/g'
